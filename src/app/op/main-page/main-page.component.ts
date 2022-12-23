@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { IPersonaje } from '../interfaces/op.interfaces';
 
-interface IPersonaje {
-  nombre: string;
-  poder: number;
-}
+
+
 
 @Component({
   selector: 'app-main-page',
@@ -11,6 +10,8 @@ interface IPersonaje {
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent  {
+
+  
 
   personajes: IPersonaje[] = [
     {nombre: "Luffy",
@@ -27,22 +28,19 @@ export class MainPageComponent  {
     poder: 12500
   }
 
-  agregar(){
-   
-    if ( this.nuevo.nombre.trim().length === 0) {
-      return ;
-    }
 
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre: "",
-      poder: 0
-    }
-  }
-
+  
   cambiarNombre(event:any){
     console.log(event.target.value)
-
   }
+
+
+  agregarNuevoPersonaje( argumento: IPersonaje) {
+      this.personajes.push(argumento);
+      console.log(argumento);
+    }
+
+
+ 
 
 }

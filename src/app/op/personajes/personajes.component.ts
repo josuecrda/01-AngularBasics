@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IPersonaje } from '../interfaces/op.interfaces';
 
 import { MainPageComponent } from '../main-page/main-page.component';
 
@@ -8,7 +9,6 @@ import { MainPageComponent } from '../main-page/main-page.component';
   styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent  {
-
-   personajes: any[] = [];
+  @Input() personajes: IPersonaje[] = [];
 
 }
