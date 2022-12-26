@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { PersonajesComponent } from './personajes/personajes.component';
 import { AgregarComponent } from './agregar/agregar.component';
 
+import { opService } from './services/op.service';
+
 
 
 @NgModule({
@@ -20,6 +22,9 @@ import { AgregarComponent } from './agregar/agregar.component';
   ],
   exports: [
     MainPageComponent 
+  ],
+  providers: [
+    opService
   ]
 })
 export class OpModule { }

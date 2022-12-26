@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IPersonaje } from '../interfaces/op.interfaces';
+import { opService } from '../services/op.service';
 
 
 
@@ -11,36 +12,13 @@ import { IPersonaje } from '../interfaces/op.interfaces';
 })
 export class MainPageComponent  {
 
-  
-
-  personajes: IPersonaje[] = [
-    {nombre: "Luffy",
-    poder: 14000},
-    {
-      nombre: "Law",
-      poder: 13500
-    }
-
-
-  ]
   nuevo: IPersonaje = {
     nombre: "Zoro",
     poder: 12500
   }
 
-
-  
-  cambiarNombre(event:any){
-    console.log(event.target.value)
-  }
-
-
-  agregarNuevoPersonaje( argumento: IPersonaje) {
-      this.personajes.push(argumento);
-      console.log(argumento);
+    constructor(){
     }
-
-
  
 
 }

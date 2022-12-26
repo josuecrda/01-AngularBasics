@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IPersonaje } from '../interfaces/op.interfaces';
+import { opService } from '../services/op.service';
 
 @Component({
   selector: 'app-agregar',
@@ -14,7 +15,11 @@ export class AgregarComponent  {
     poder: 0
   }
 
-  @Output () onNuevoPersonaje: EventEmitter<IPersonaje> = new EventEmitter();
+  constructor(private opService:opService){
+
+  }
+
+  // @Output () onNuevoPersonaje: EventEmitter<IPersonaje> = new EventEmitter();
 
   agregar(){
    
@@ -23,8 +28,9 @@ export class AgregarComponent  {
 
     }
 
-    console.log(this.nuevoa)
-    this.onNuevoPersonaje.emit( this.nuevoa )
+    this.opService.agregarPersonajes(this.nuevoa);
+
+    // this.onNuevoPersonaje.emit( this.nuevoa )
     this.nuevoa = {
       nombre: "",
       poder: 0
